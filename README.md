@@ -2,6 +2,10 @@
 
 **BarberGeelAppointment** is an online appointment booking system for barbershops. It allows clients to schedule appointments online, receive email reminders, and pay securely through an integrated payment gateway. This project is built with Django and provides an easy-to-use interface for both customers and staff.
 
+## Live Demo
+
+You can try out the live demo of the project here: [BarberGeelAppointment Demo](https://barber-appointment.liara.run/)
+
 ## Features
 
 - **Online Appointment Booking**: Clients can select a preferred date and time for various barbershop services.
