@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+
+{% block title %}404{% endblock title %}
+
+{% block content %}
+
+<div class="loader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="error-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="error-content">
+                    <i class='bx bxs-sad bx-flashing'></i>
+                    <h1>متاسفم</h1>
+                    <h2>صفحه مورد نظر پیدا نشد</h2>
+                    <p>ممکن است در آدرس وارد شده ایرادی وجود داشته باشد</p>
+                    <a class="common-btn two" href="{% url "home" %}">برگشت به خانه </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="go-top">
+    <i class='bx bxs-up-arrow-alt'></i>
+    <i class='bx bxs-up-arrow-alt'></i>
+</div>
+
+
+{% endblock content %}
