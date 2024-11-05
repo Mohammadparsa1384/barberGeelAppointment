@@ -65,7 +65,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'parsajavidi17@gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = 'eiif cnzi mlgj ymhv'
+EMAIL_HOST_PASSWORD = 'Your email host password'
 DEFAULT_FROM_EMAIL = "parsajavidi17@gmail.com"
 
 
@@ -158,7 +158,7 @@ LOGOUT_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 
-ZARINPAL_MERCAHNTID = '6e5e634b-8b4b-406c-aadb-6b10bdc8e315'
+ZARINPAL_MERCAHNTID = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
