@@ -20,55 +20,70 @@ Make sure you have the following installed before running the project:
 
 - Python 3.8 or higher
 - Django 3.2 or higher
+- PostgreSQL
 - Additional packages: `requests`, `django-jalali`, and `django-crispy-forms`
 
 ## Installation and Setup
 
 1. **Clone the repository**:
 
-    ```bash
-    git clone https://github.com/Mohammadparsa1384/barberGeelAppointment.git
-    cd barberGeelAppointment
-    ```
+   ```bash
+   git clone https://github.com/Mohammadparsa1384/barberGeelAppointment.git
+   cd barberGeelAppointment
+   ```
 
 2. **Create a virtual environment**:
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
 3. **Install dependencies**:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Setup environment variables**:
 
-    Create a `.env` file in the root of your project and add your configuration settings, such as database credentials, email settings, and Zarinpal payment credentials.
+   Create an `.env` file in the root of your project and add the following configuration settings:
+
+   ```env
+   DJANGO_SECRET_KEY=<your-secret-key>
+   EMAIL_HOST_USER=<your-email>
+   EMAIL_HOST_PASSWORD=<your-email-password>
+   EMAIL_USE_TLS=True
+   ZARINPAL_MERCAHNTID=<your-zarinpal-merchant-id>
+   DJANGO_DEBUG=True
+   POSTGRES_NAME=<your-database-name>
+   POSTGRES_USER=<your-database-user>
+   POSTGRES_PASSWORD=<your-database-password>
+   ```
+
+   Alternatively, you can use the provided `example.env` file and fill in the required values.
 
 5. **Run migrations**:
 
-    ```bash
-    python manage.py migrate
-    ```
+   ```bash
+   python manage.py migrate
+   ```
 
 6. **Create a superuser** (for accessing the Django admin interface):
 
-    ```bash
-    python manage.py createsuperuser
-    ```
+   ```bash
+   python manage.py createsuperuser
+   ```
 
 7. **Run the development server**:
 
-    ```bash
-    python manage.py runserver
-    ```
+   ```bash
+   python manage.py runserver
+   ```
 
 8. **Access the project**:
 
-    Visit `http://127.0.0.1:8000/` to access the application. You can log in as an admin at `http://127.0.0.1:8000/admin`.
+   Visit `http://127.0.0.1:8000/` to access the application. You can log in as an admin at `http://127.0.0.1:8000/admin`.
 
 ## Usage
 
@@ -80,4 +95,32 @@ Once set up, clients can book appointments by selecting a date and time within b
 - `templates/`: Contains HTML templates for the user interface.
 - `static/`: Contains static files like CSS and JavaScript for styling and interactivity.
 - `settings.py`: Configures Django settings, including database, authentication, and email settings.
+
+## Running with PostgreSQL
+
+If you want to use PostgreSQL instead of SQLite, update your `.env` file with your PostgreSQL credentials and modify the `DATABASES` setting in `settings.py` accordingly:
+
+```python
+from environs import Env
+
+env = Env()
+env.read_env()
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env.str('POSTGRES_NAME'),
+        'USER': env.str('POSTGRES_USER'),
+        'PASSWORD': env.str('POSTGRES_PASSWORD'),
+        'HOST': 'localhost',  # Change this if using a remote database
+        'PORT': '5432',  # Default PostgreSQL port
+    }
+}
+```
+
+Now, restart your server to apply the changes:
+
+```bash
+python manage.py runserver
+```
 
