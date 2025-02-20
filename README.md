@@ -83,7 +83,7 @@ Make sure you have the following installed before running the project:
 
 8. **Access the project**:
 
-   Visit `http://127.0.0.1:8000/` to access the application. You can log in as an admin at `http://127.0.0.1:8000/admin`.
+   Visit `http://127.0.0.1:8000/` to access the application. You can log in as an admin at `http://127.0.0.1:8000/ba-@dmin-re`.
 
 ## Usage
 
