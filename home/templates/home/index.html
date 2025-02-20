@@ -1,0 +1,159 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load book_tags %}
+{% block title %}صفحه اصلی{% endblock title %}
+
+{% block content %}
+
+<div class="banner-area banner-img-one">
+    <div class="banner-shape">
+        <img src="{% static "images/banner/banner-shape1.png" %}" alt="Shape">
+        <img src="{% static "images/banner/banner-shape2.png" %}" alt="Shape">
+        <img src="{% static "images/banner/banner-shape3.png" %}" alt="Shape">
+        <img src="{% static "images/banner/banner-shape4.png" %}" alt="Shape">
+        <img src="{% static "images/banner/banner-shape5.png" %}" alt="Shape">
+    </div>
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container-fluid">
+                <div class="banner-content">
+                    <h1 class="wow fadeInUp">سالن زیبایی جیل</h1>
+                    <div class="banner-btn-area">
+                        
+                        <a class="common-btn" href="{% url "about" %}">درباره ما</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="offer-area ptb-100">
+    <div class="offer-shape">
+        <img src="{% static "images/offer/offer-shape1.png" %}" alt="Shape">
+    </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>مهمترین خدمات ما</h2>
+        </div>
+        <div class="offer-slider owl-theme owl-carousel">
+
+            {% services_list %}
+            
+        </div>
+    </div>
+</section>
+
+
+<div class="best-area pt-100 pb-70">
+    <div class="best-shape">
+        <img src="{% static "images/best/best-shape1.png" %}" alt="Shape">
+    </div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="best-img">
+                    <img src="{% static "images/best/best1.jpg" %}" alt="Best">
+                    <img src="{% static "images/best/best-bg.png" %}" alt="Shape">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faq-item">
+                    <div class="section-title">
+                        <h2>چرا ما بهترینیم؟</h2>
+                        <p>در سالن زیبایی جیل، ما به زیبایی شما اهمیت می‌دهیم و به دنبال ایجاد تجربه‌ای خاص و به یاد ماندنی برای شما هستیم. با ما همراه شوید و از خدمات برتر ما بهره‌مند شوید. منتظر شما هستیم تا با هم به زیبایی شما بیفزاییم!</p>
+                    </div>
+                    <ul class="accordion">
+                        <li>
+                            <h3 class="faq-head">تخصص و تجربه</h3>
+                            <div class="faq-content">
+                                <p>در سالن زیبایی جیل، ما به زیبایی شما اهمیت می‌دهیم و به دنبال ایجاد تجربه‌ای خاص و به یاد ماندنی برای شما هستیم. با ما همراه شوید و از خدمات برتر ما بهره‌مند شوید. منتظر شما هستیم تا با هم به زیبایی شما بیفزاییم!</p>
+                            </div>
+                        </li>
+                     
+                        <li>
+                            <h3 class="faq-head">محیط آرامش‌بخش</h3>
+                            <div class="faq-content">
+                                <p>سالن زیبایی ما با طراحی مدرن و دلپذیر، فضایی آرامش‌بخش و راحت برای شما ایجاد کرده است. ما معتقدیم که زیبایی باید همراه با آرامش باشد و به همین دلیل، تلاش می‌کنیم تا شما در طول زمان حضور خود در سالن، احساس راحتی و خوشایندی داشته باشید.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="faq-head">مشاوره شخصی‌سازی شده</h3>
+                            <div class="faq-content">
+                                <p>ما به هر مشتری به صورت فردی نگاه می‌کنیم و به شما مشاوره‌های شخصی‌سازی شده ارائه می‌دهیم. این مشاوره‌ها به ما کمک می‌کنند تا بهترین خدمات را با توجه به نیازها و سلیقه‌های خاص شما ارائه دهیم.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="common-btn" href="{% url "about" %}">درباره ما </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="services-area pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>خدمات سالن زیبایی ما</h2>
+            <p>در سالن زیبایی جیل، ما با افتخار مجموعه‌ای از خدمات جامع زیبایی را به شما ارائه می‌دهیم. هدف ما ارتقای زیبایی و اعتماد به نفس شماست. خدمات ما شامل:</p>
+        </div>
+        <div class="row">
+           
+           {% services_detail_list %}
+             
+        </div>
+        
+    </div>
+</section>
+
+
+
+<section class="get-area">
+    <div class="container">
+        <div class="get-content">
+            <div class="get-shape">
+                <img src="{% static "images/get-shape1.png" %}" alt="Shape">
+                <img src="{% static "images/get-shape2.png" %}" alt="Shape">
+            </div>
+            <div class="section-title">
+                <h2>برای رزرو نوبت فقط کافی است با ما در تماس باشید</h2>
+            </div>
+            <a class="common-btn" href="{% url "book" %}">درخواست وقت</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="skin-area pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="skin-content">
+                    <div class="section-title">
+                        <h2>جدیدترین مهارت ها و خلاقیت های ما</h2>
+                        <p>در سالن آرایش ما، همیشه در تلاشیم تا با جدیدترین مهارت‌ها و خلاقیت‌ها، تجربه‌ای منحصر به فرد برای شما فراهم کنیم. تیم متخصص ما با استفاده از تکنیک‌های روز دنیا و محصولات با کیفیت، به شما در دستیابی به ظاهری بی‌نظیر کمک می‌کند. از خدمات آرایش و میکاپ حرفه‌ای گرفته تا طراحی مو و درمان‌های زیبایی، تمامی خدمات ما به دقت و با توجه به سلیقه شما ارائه می‌شود.</p>
+                         <p>ما همچنین در زمینه طراحی تجربه کاربری  به مشتریان خود این امکان را می‌دهیم که به راحتی خدمات مورد نظر خود را انتخاب کنند و از مشاوره‌های تخصصی بهره‌مند شوند. با ما همراه باشید و از خدمات نوآورانه و خاص ما بهره‌مند شوید؛ چرا که زیبایی شما، تخصص ماست!</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skin-img">
+                    <img src="{% static "images/skin-main.jpg" %}" alt="Skin">
+                    <img src="{% static "images/skin-shape1.png" %}" alt="Shape">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+{% endblock content %}
+    

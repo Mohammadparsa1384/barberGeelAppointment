@@ -1,0 +1,89 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} رزرو نوبت {% endblock title %}
+{% block content %}
+
+<div class="reviews-area two ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+               
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="reviews-shape">
+                        <img src="{% static "images/reviews/reviews-shape1.png" %}" alt="Shape">
+                        <img src="{% static "images/reviews/reviews-shape2.png" %}" alt="Shape">
+                    </div>
+
+                <form method="post" action="{% url "payment_page" appointment.id %}">
+                    {% csrf_token %}
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="review-content">
+                            <i class='bx bxs-quote-alt-right icon'></i>
+                            <p>رزرو نوبت با موفقیت انجام شد</p>
+
+                            <p>جمع کل : {{ total_price|intcomma:False }} تومان</p>
+                            
+
+                            <button type="submit" class="common-btn">پرداخت</a>
+
+                        </div>
+                    </div>
+
+                </form>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="review-content">
+                            <i class='bx bxs-quote-alt-right icon'></i>
+                            
+                            <ul>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div class="review-content">
+                            <i class='bx bxs-quote-alt-right icon'></i>
+                            
+                            <ul>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                                <li>
+                                    <i class='bx bxs-star checked'></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

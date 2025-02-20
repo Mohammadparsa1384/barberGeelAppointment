@@ -1,0 +1,19 @@
+{% load static %}
+{% load book_tags %}
+
+{% for service in services %}
+
+<div class="offer-item">
+    <img src="{{ service.image.url }}" alt="Offer">
+    <div class="inner">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <h4>{{ service.title }}</h4>
+                <a href="{{ service.get_absolute_url }}">مشاهده</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}

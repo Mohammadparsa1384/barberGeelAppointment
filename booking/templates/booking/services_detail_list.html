@@ -1,0 +1,21 @@
+{% load static %}
+{% load book_tags %}
+
+{% for service in services %}
+
+
+<div class="col-sm-6 col-lg-3">
+    <div class="services-item">
+        <div class="inner">
+            <img src="{{ service.image.url }}" alt="Services">
+            <h3>
+                <a href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+            </h3>
+            <p>{{ service.desc|truncatewords:3 }}</p>
+            <a  class="services-btn" href="{{ service.get_absolute_url }}">اطلاعات بیشتر</a>
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}

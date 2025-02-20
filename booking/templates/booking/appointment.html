@@ -1,0 +1,76 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}رزرو نوبت{% endblock title %}
+{% block content %}
+
+<div class="page-title-wrap">
+    <div class="page-title-area title-img-seven">
+        <div class="title-shape">
+            <img src="{% static "images/title/title-shape1.png" %}" alt="Shape">
+        </div>
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="title-content">
+                    <h2>رزرو وقت</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url "home" %}">خانه</a>
+                        </li>
+                        <li>
+                            <span>رزرو وقت</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="appointment-area ptb-100">
+    <div class="container">
+        <div class="appointment-content">
+            <div class="appointment-shape">
+                <img src="{% static "images/contact-shape1.png" %}" alt="Shape">
+                <img src="{% static "images/contact-shape2.png" %}" alt="Shape">
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    
+                    {% for error in form.errors.values %}
+                    {{error}}
+                    {% endfor %}
+                    
+                    {{ form.as_p }}
+                    
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <button type="submit" class="btn common-btn two">ثبت نوبت</button>
+                        </div>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        flatpickr("#id_time", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true,     
+            minTime: "09:00",
+            maxTime : "22:00",
+            minuteIncrement:30
+        });
+    });
+</script>
+
+
+{% endblock content %}
