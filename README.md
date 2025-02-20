@@ -18,8 +18,8 @@ You can try out the live demo of the project here: [BarberGeelAppointment Demo](
 
 Make sure you have the following installed before running the project:
 
-- Python 3.8 or higher
-- Django 3.2 or higher
+- Python 3.9 or higher
+- Django 4 or higher
 - PostgreSQL
 - Additional packages: `requests`, `django-jalali`, and `django-crispy-forms`
 
